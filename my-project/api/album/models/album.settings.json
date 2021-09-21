@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "albums",
+  "info": {
+    "name": "Album",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "NumberOfSong": {
+      "type": "integer",
+      "required": true
+    },
+    "IMAGE": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "artist": {
+      "model": "artist",
+      "via": "albums"
+    },
+    "songs": {
+      "via": "album",
+      "collection": "song"
+    }
+  }
+}

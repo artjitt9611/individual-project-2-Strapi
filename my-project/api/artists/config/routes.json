@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/artists",
+      "handler": "artists.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/artists",
+      "handler": "artists.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/artists",
+      "handler": "artists.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

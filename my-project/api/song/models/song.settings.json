@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "songs",
+  "info": {
+    "name": "Song",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Artist": {
+      "type": "string",
+      "required": true
+    },
+    "Ablum": {
+      "type": "string",
+      "required": true
+    },
+    "Time": {
+      "type": "time",
+      "required": true
+    },
+    "album": {
+      "via": "songs",
+      "model": "album"
+    }
+  }
+}
